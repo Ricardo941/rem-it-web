@@ -50,6 +50,31 @@
 
         /* Footer */
         footer { padding: 40px 10%; background-color: #020c1b; text-align: center; border-top: 1px solid rgba(100, 255, 218, 0.1); }
+        /* Botón Flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+
     </style>
 </head>
 <body>
@@ -116,6 +141,12 @@
         <div style="color: var(--titulos); font-weight: 700;">REM IT CONTINUITY</div>
         <p style="font-size: 0.8rem;">© 2026 Soluciones Senior de Infraestructura. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Icono de WhatsApp (puedes usar una imagen o un icono de FontAwesome, aquí usamos un emoji para que sea ligero) -->
+    <a href="https://wa.me." class="whatsapp-float" target="_blank">
+        <span style="font-size: 35px;">💬</span>
+    </a>
+
 
 </body>
 </html>
