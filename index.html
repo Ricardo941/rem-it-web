@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REM IT Continuity | Soluciones de Infraestructura Global</title>
+    <title>REM IT Continuity | Infraestructura & Continuidad Operativa</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
         :root {
@@ -15,172 +15,107 @@
             --blanco: #ffffff;
         }
 
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background-color: var(--principal);
-            color: var(--texto);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
+        body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--principal); color: var(--texto); line-height: 1.6; scroll-behavior: smooth; }
+        
         /* Navegación */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-            background-color: rgba(10, 25, 47, 0.9);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
-        }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background-color: rgba(10, 25, 47, 0.95); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(100, 255, 218, 0.1); }
+        .logo { font-weight: 700; font-size: 1.5rem; color: var(--acento); text-decoration: none; }
+        .nav-links a { color: var(--titulos); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--acento); }
 
-        .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--acento);
-            letter-spacing: 1px;
-        }
+        /* Hero */
+        .hero { height: 75vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 3.8rem); color: var(--blanco); max-width: 1000px; margin-bottom: 20px; line-height: 1.1; }
+        .hero span { color: var(--acento); }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin-bottom: 35px; }
 
-        .nav-links a {
-            color: var(--titulos);
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
+        .btn-cta { background: transparent; border: 1px solid var(--acento); color: var(--acento); padding: 18px 35px; text-decoration: none; font-weight: 600; border-radius: 4px; transition: 0.3s; }
+        .btn-cta:hover { background: rgba(100, 255, 218, 0.1); }
 
-        .nav-links a:hover {
-            color: var(--acento);
-        }
+        /* Secciones */
+        section { padding: 80px 10%; }
+        h2.section-title { text-align: center; font-size: 2.2rem; color: var(--titulos); margin-bottom: 60px; }
+        h2.section-title span { color: var(--acento); }
 
-        /* Hero Section Corporativo */
-        .hero {
-            height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
+        /* Servicios Grid */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background-color: var(--secundario); padding: 40px; border-radius: 8px; border: 1px solid transparent; transition: 0.3s; }
+        .service-card:hover { border-color: var(--acento); transform: translateY(-5px); }
+        .service-card h3 { color: var(--titulos); margin-top: 0; }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            color: var(--blanco);
-            max-width: 900px;
-            margin-bottom: 20px;
-            line-height: 1.1;
-        }
+        /* Experiencia Senior */
+        .exp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .exp-item { border-left: 3px solid var(--acento); padding-left: 25px; }
+        .exp-item h4 { color: var(--titulos); margin: 0 0 10px 0; font-size: 1.2rem; }
 
-        .hero span {
-            color: var(--acento);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin-bottom: 35px;
-        }
-
-        .btn-cta {
-            background: transparent;
-            border: 1px solid var(--acento);
-            color: var(--acento);
-            padding: 18px 35px;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 4px;
-            transition: 0.3s;
-        }
-
-        .btn-cta:hover {
-            background: rgba(100, 255, 218, 0.1);
-        }
-
-        /* Sección de Servicios en Cuadrícula */
-        .services {
-            padding: 100px 10%;
-            background-color: var(--secundario);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 50px;
-        }
-
-        .service-card {
-            background-color: var(--principal);
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid transparent;
-            transition: 0.3s;
-        }
-
-        .service-card:hover {
-            border-color: var(--acento);
-            transform: translateY(-5px);
-        }
-
-        .service-card h3 {
-            color: var(--titulos);
-            margin-top: 0;
-        }
-
-        .service-card p {
-            font-size: 0.95rem;
-        }
-
-        h2.section-title {
-            text-align: center;
-            font-size: 2rem;
-            color: var(--titulos);
-        }
-
-        h2.section-title span {
-            color: var(--acento);
-        }
+        /* Footer */
+        footer { padding: 40px 10%; background-color: #020c1b; text-align: center; border-top: 1px solid rgba(100, 255, 218, 0.1); }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">REM IT <span>Continuity</span></div>
+        <a href="#" class="logo">REM IT <span>Continuity</span></a>
         <div class="nav-links">
-            <a href="#inicio">Inicio</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#nosotros">Nosotros</a>
+            <a href="#servicios">Soluciones</a>
+            <a href="#experiencia">Experiencia</a>
             <a href="#contacto">Contacto</a>
         </div>
     </nav>
 
     <section id="inicio" class="hero">
-        <h1>Infraestructura Crítica <span>Siempre Disponible.</span></h1>
-        <p>Soluciones corporativas de Continuidad Operativa, Seguridad de Datos y Gestión SysAdmin bajo estándares de clase mundial.</p>
-        <a href="#servicios" class="btn-cta">Explorar Soluciones Corporativas</a>
+        <h1>Sistemas Críticos <span>Bajo Control Corporativo.</span></h1>
+        <p>Expertos en administración de infraestructura global, garantizando que su operación nunca se detenga.</p>
+        <a href="#servicios" class="btn-cta">Ver Unidades de Negocio</a>
     </section>
 
-    <section id="servicios" class="services">
-        <h2 class="section-title">Nuestras <span>Unidades de Negocio</span></h2>
+    <section id="servicios" style="background-color: var(--secundario);">
+        <h2 class="section-title">Nuestras <span>Soluciones</span></h2>
         <div class="services-grid">
-            <div class="service-card">
-                <h3>Gestión y Optimización</h3>
-                <p>Mantenemos su infraestructura al día. Implementamos parches críticos, monitoreo de rendimiento y optimización de servidores para garantizar la salud del sistema.</p>
+            <div class="service-card" style="background-color: var(--principal);">
+                <h3>Gestión SysAdmin</h3>
+                <p>Administración de servidores, parchado crítico y optimización de rendimiento bajo estándares internacionales.</p>
             </div>
-            <div class="service-card">
+            <div class="service-card" style="background-color: var(--principal);">
                 <h3>Continuidad Operativa</h3>
-                <p>Diseñamos arquitecturas de alta disponibilidad que eliminan los puntos únicos de falla, asegurando que su operación no se detenga ante ninguna contingencia.</p>
+                <p>Diseño de arquitecturas redundantes para eliminar puntos únicos de falla en su infraestructura TI.</p>
             </div>
-            <div class="service-card">
-                <h3>Blindaje de Información</h3>
-                <p>Estrategias avanzadas de Backup & Disaster Recovery. Protección de datos sensibles con estándares globales de seguridad y recuperación híbrida.</p>
+            <div class="service-card" style="background-color: var(--principal);">
+                <h3>Backup & Recovery</h3>
+                <p>Blindaje de datos sensibles con estrategias de recuperación ante desastres (DRP) altamente eficientes.</p>
             </div>
         </div>
     </section>
+
+    <section id="experiencia">
+        <h2 class="section-title">Trayectoria <span>Senior</span></h2>
+        <div class="exp-grid">
+            <div class="exp-item">
+                <h4>Consultoría Transnacional</h4>
+                <p>Más de 6 años liderando infraestructuras críticas para firmas de consultoría con presencia global.</p>
+            </div>
+            <div class="exp-item">
+                <h4>Disponibilidad 24/7</h4>
+                <p>Gestión de entornos complejos logrando indicadores de disponibilidad del 99.9% anual.</p>
+            </div>
+            <div class="exp-item">
+                <h4>Hardening & Seguridad</h4>
+                <p>Aplicación de protocolos corporativos para el endurecimiento de servidores y mitigación de riesgos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" style="text-align: center; border-top: 1px solid rgba(100, 255, 218, 0.1);">
+        <h2 class="section-title">¿Listo para el <span>Siguiente Nivel?</span></h2>
+        <p style="margin-bottom: 40px;">Solicite una evaluación técnica de su infraestructura hoy mismo.</p>
+        <!-- Cambia el número por el tuyo -->
+        <a href="https://wa.me." class="btn-cta" target="_blank">Contactar Consultoría Senior</a>
+    </section>
+
+    <footer>
+        <div style="color: var(--titulos); font-weight: 700;">REM IT CONTINUITY</div>
+        <p style="font-size: 0.8rem;">© 2026 Soluciones Senior de Infraestructura. Todos los derechos reservados.</p>
+    </footer>
 
 </body>
 </html>
